@@ -1,1 +1,36 @@
+## optional case
 
+<!-- ///// NOT TO BE EVALUATED, THANKS /////
+
+///// WORK IN PROGRESS //// -->
+
+![image](./content/screenshot.png)
+
+- I have created 4 main tables
+
+1. home.
+
+- 3 arrays (newCourses, mostViewed and byTopic) which each have embedded id, summary and name of the courses for faster loading times.
+<!-- Only byTopic includes topicLevel1, has it serves -->
+
+2. courses.
+
+- title, summary and price.
+- usersRating
+- subscriptionIncluded: Boolean, to know if the service paid memership includes or not access to each course. This is only true when all lessons are pay per view.
+- payToView: Boolean, to determine if there should be a pay-wall to access the course content. This is only true when all lessons are pay per view.
+- topic: This is included in oder to have a category tree, which would be made of 3 different levels.
+<!-- PATTERN ATTRIBUTE? -->
+- authors: Embedded id and name only, as it is the only data needed in the courses/lessons webpages. The rest of the authors data is included in its separate table.
+
+- lessons: All lessons related data has been embedded in this table for quicker access.
+  -- author id and name has been embbeded. Same goes for topic.
+  -- courseLessonsList: Needed to show current's course full list of lessons.
+  -- subscriptionIncluded and payToView added also for lessons to cover the scenario where course is not 100% pay-per-view.
+
+3. user
+   All data needed to be shown in user's profile page, from personal information to payment details and purchased/enrolled courses as well as authors followed.
+   The rest of the information related to purchases (invoice, amount, payment method used, and other billing data) can be stored in a separate table, which wont be visited as much.
+
+4. authors
+   Table used authors' page. It contains all the information related to the authors
