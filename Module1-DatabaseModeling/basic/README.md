@@ -1,6 +1,6 @@
 ## basic case
 
-![image](./content/screenshot.png)
+![image](./screenshot.png)
 
 - I have created 4 main tables
 

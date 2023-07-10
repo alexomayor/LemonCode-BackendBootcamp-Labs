@@ -4,7 +4,7 @@
 
 ///// WORK IN PROGRESS //// -->
 
-![image](./content/screenshot.png)
+![image](./screenshot.png)
 
 - I have created 6 main tables
 
