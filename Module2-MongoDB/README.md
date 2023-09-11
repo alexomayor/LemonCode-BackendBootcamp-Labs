@@ -16,10 +16,12 @@ En este base de datos puedes encontrar un montón de alojamientos y sus reviews,
 **Pregunta**. Si montaras un sitio real, ¿Qué posibles problemas pontenciales les ves a como está almacenada la información?
 
 ```md
--Dependes de la base de datos de otra empresa, en este caso AirBnB. Cada vez que ellos actualicen su modelo, incluyan, modifiquen o eliminen campos, nosotros tendriamos que actualizar el nuestro (o la conexion entre ellos, mas bien)
--Posible inconsistencia en los datos, como en los formatos usados, distintas categorizaciones u opciones para cada campo.
-Por ejemplo, los valores de minimum_nights y maximum_nights son numeros en formato string, que puede complicar la manipulacion de datos al hacer agrupamientos, filtros u operaciones matematicas.
-Ademas, dentro del objeto amenities, al ser cada elemento un string, puede diferir entre un documento y otro (mayus/minus, espacios, etc.)
+- Dependes de la base de datos de otra empresa, en este caso AirBnB. Cada vez que ellos actualicen su modelo, incluyan, modifiquen o eliminen campos, nosotros tendriamos que actualizar el nuestro (o la conexion entre ellos, mas bien)
+- Posible inconsistencia en los datos, como en los formatos usados, distintas categorizaciones u opciones para cada campo.
+  Por ejemplo, los valores de minimum_nights y maximum_nights son numeros en formato string, que puede complicar la manipulacion de datos al hacer agrupamientos, filtros u operaciones matematicas.
+  Ademas, dentro del objeto amenities, al ser cada elemento un string, puede diferir entre un documento y otro (mayus/minus, espacios, etc.)
+- Fragmentacion: Muchos de los campos tienen entradas de texto libre (access, house_rules, interaction, neightborhood_overview, etc) por lo que se fragmenta mucho los resultados de potenciales busquedas, ralentizando tiempos de ejecucion.
+- Tiempos de actualizacion de datos. Si el webscrapping se hace segun el campo last_scraped, se puede intuir que solo se actualiza, como maximo, diariamente a las 6.00 am. Ademas, las fechas de ultimo scraping para cada item invita a pensar que algunos se actualizan con una frecuencia mensual.
 ```
 
 ## Obligatorio
